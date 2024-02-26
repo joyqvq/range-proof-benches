@@ -1,0 +1,3 @@
+[submodule "BFDW"]
+	path = BFDW
+	url = https://github.com/joyqvq/range_proof
