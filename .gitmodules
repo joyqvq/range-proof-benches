@@ -1,3 +1,6 @@
 [submodule "BFDW"]
 	path = BFDW
 	url = https://github.com/joyqvq/range_proof
+[submodule "hashwire"]
+	path = hashwire
+	url = https://github.com/novifinancial/hashwires
