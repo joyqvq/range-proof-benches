@@ -48,7 +48,7 @@ mod bulletproof_benches {
         let upper_bound = 64;
         let mut blinding = [0u8; 32];
         thread_rng().fill_bytes(&mut blinding);
-        c.bench_function("Bulletproof Proving 32 bits", move |b| {
+        c.bench_function("Bulletproof Proving 64 bits", move |b| {
             b.iter(|| {
                 let (_commitment, _range_proof) = BulletproofsRangeProof::prove_bit_length(
                     value,
@@ -70,7 +70,7 @@ mod bulletproof_benches {
             BulletproofsRangeProof::prove_bit_length(value, blinding, upper_bound, b"MY_DOMAIN")
                 .unwrap();
 
-        c.bench_function("Bulletproof Verifying 32 bits", move |b| {
+        c.bench_function("Bulletproof Verifying 64 bits", move |b| {
             b.iter(|| {
                 range_proof
                     .verify_bit_length(&commitment, upper_bound, b"MY_DOMAIN")
