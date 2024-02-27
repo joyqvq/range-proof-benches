@@ -1,0 +1,27 @@
+[package]
+name = "bulletproof"
+version = "0.1.7"
+license = "Apache-2.0"
+authors = ["Mysten Labs <build@mystenlabs.com>"]
+edition = "2021"
+publish = ["crates-io"]
+readme = "../README.md"
+description = "Common cryptographic library used at Mysten Labs"
+repository = "https://github.com/MystenLabs/fastcrypto"
+
+[dependencies]
+bulletproofs = "4.0.0"
+fastcrypto = { git = "https://github.com/MystenLabs/fastcrypto", rev = "ea66012b860d9dd152abb7f2156275698ee91126" }
+curve25519-dalek-ng = "4.1.1"
+merlin = "3.0.0"
+once_cell = "1.17.0"
+signature = { version = "2.0.0" }
+serde = { version = "1.0.152", features = ["derive"] }
+
+[[bench]]
+name = "bulletproofs"
+harness = false
+
+[dev-dependencies]
+criterion = "0.4.0"
+rand = { version = "0.8.5", features = ["std"] }
